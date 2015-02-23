@@ -1,1 +1,1 @@
-# lc
+# REpo for Laboratório de Computadores
