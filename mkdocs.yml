@@ -1,0 +1,4 @@
+site_name: Laboratório de Computadores
+pages:
+- [index.md, Home]
+theme: journal
