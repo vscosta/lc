@@ -1,0 +1,29 @@
+%% Ambientes LaTeX para formatar exercícios e alineas
+%% Pedro Vasconcelos, 2011
+%
+% UTILIZAÇÃO:
+%
+% \begin{exercicio}
+% ....
+% ...
+% \begin{alineas}
+% \item ...
+% \item ...
+% \end{alineas}
+% \end{exercicio}
+%
+% Também pode usar \label{} e \ref{} para referir exercícios e alíneas 
+%
+
+\newcounter{excnt}[section]
+\renewcommand{\theexcnt}{\arabic{excnt}}
+
+\newenvironment{exercicio}{\refstepcounter{excnt}\noindent\textbf{\theexcnt.}\hspace{.25em}}{\par\bigskip}
+
+
+\newenvironment{solucao}{\noindent\textbf{Solução:}\hspace{.25em}}{\par\bigskip}
+
+
+\newcounter{alcnt}[excnt]
+\newenvironment{alineas}{\begin{list}{(\alph{alcnt})}{\usecounter{alcnt}}}{\end{list}}
+

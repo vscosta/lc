@@ -1,0 +1,109 @@
+\documentclass[12pt]{article}
+
+\usepackage[portuges]{babel}
+\usepackage{a4wide}
+\usepackage[utf8]{inputenc}
+\usepackage{hyperlatex}
+\usepackage{enumerate}
+
+\htmldirectory{pratic-html}
+\htmlcharset{mnemonic}
+\W\newcommand{\HlxIllegalAccent}[2]{#2}
+\W\renewcommand{\HlxIcons}{}
+\htmldepth{2}
+
+\htmltitle{}
+\htmladdress{\copyright 2006--2016
+  Departamento de Ciência de Computadores, Faculdade de Ciências,
+  Universidade do Porto}
+
+\title{Exercícios para Introdução aos Computadores}
+
+\author{
+{Departamento de Ciência de Computadores}\\
+{Faculdade de Ciências, Universidade do Porto}}
+
+\date{2011}
+
+
+\newcommand{\lixo}[1]{}
+
+\begin{document}
+\maketitle
+
+\htmlrule
+
+\htmlmenu{2}
+\section{Utilização da ``shell''}
+
+\subsection{Manipulação de ficheiros e arquivos}
+
+\begin{enumerate}
+\item Use o comando \verb+cd+ para ficar no seu directório casa.
+
+\item Use o comando \verb+mkdir+ (e só ele) para criar os seguintes
+  directórios:
+  \begin{itemize}
+  \item \verb=~/aulas=
+  \item \verb=~/aulas/ic=
+  \item \verb=~/aulas/ic/trabalho=
+  \item \verb=~/aulas/ic/arquivo=
+  \item \verb=~/aulas/ic/trabalho/teste=
+  \end{itemize}
+  Qual o número de vezes que executou \verb=mkdir= (use
+  \verb=history=)?  Esse número poderia ter sido menor? Qual o número
+  mínimo para obter o mesmo resultado?
+
+\item Desenhe a árvore de ficheiros que criou.
+
+\item Use um editor de texto para criar o ficheiro
+  \verb=~/aulas/lc/trabalho/teste/fc.url= contendo o texto:
+\begin{verbatim}
+URL da página de FCUP:
+http://www.fc.up.pt/
+\end{verbatim}
+
+\item Estando no seu directório casa, copie o ficheiro
+  \verb=~/aulas/lc/trabalho/teste/fc.url= para o directório
+  \verb=~/aulas/lc/trabalho=. Compare as datas de criação do
+  ficheiro original e da cópia: são iguais? Se não são, apague a cópia
+  (use \verb=rm=) e volte a copiar por forma a que as datas sejam
+  exactamente as mesmas (use a opção \verb=-a= de \verb=cp=).
+
+\item Repita tudo o que fez no problema anterior mas começando por
+  mudar para o directório \verb=~/aulas/lc/trabalho/teste=.
+
+\item Mude para o directório acima (\verb=trabalho=),
+  apague \verb=~/aulas/lc/trabalho/fc.url= e copie o 
+  directório \verb=~/aulas/lc/trabalho/teste= (com o seu conteúdo)
+  para dentro do directório \verb=~/aulas/lc/arquivo=.
+
+\item Apague o directório \verb=teste=, e
+  restaure-o a partir da cópia que fez no directório \verb=arquivo=
+  (se não resolveu o problema anterior vai ter que recomeçar de
+  novo desde a criação do ficheiro \verb=fc.url=\ldots).
+
+\item Copie o ficheiro \verb=/usr/bin/tgz= para o directório
+  \verb=teste=, e use o comando \verb=file= para ver que tipo de
+  informação contém. Se for um \verb=shell script text= use os comandos
+  \verb=cat=, \verb=head=, \verb=tail=, e \verb=less= (ou, se este não
+  existir, \verb=more=) para ver (parte de) o seu conteúdo. O que
+  será?
+
+\item Crie um ficheiro \verb=fc-1.url= com o mesmo conteúdo que
+  \verb=fc.url= mas usando o comando \verb=cat= e
+  sem usar \verb=fc.url= (como poderia usá-lo?). Use o comando
+  \verb=diff=, para ver se há
+  diferenças entre os dois ficheiros. Depois apague \verb=fc-1.url=.
+
+\item Estando no directório \verb=trabalho= use o comando \verb=tar=
+  para criar um arquivo compactado, com o nome \verb=teste.tar.gz=,
+  contendo o directório \verb=teste=. Mova este arquivo para o
+  directório \verb=arquivo=, e apague o directório \verb=teste= e a sua
+  cópia no directório \verb=arquivo=. Restaure o directório \verb=teste=
+  usando o comando \verb=tar= com \verb=teste.tar.gz= (se não fez as
+  coisas correctamente, tem que recomeçar desde a criação do ficheiro
+  \verb=fc.url=; enganos com ficheiros de que não se tem cópias
+  podem sair caros\ldots{}).
+\end{enumerate}
+\end{document}

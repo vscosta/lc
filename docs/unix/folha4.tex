@@ -1,0 +1,139 @@
+\documentclass[12pt]{article}
+\usepackage[portuges]{babel}
+\usepackage{a4wide}
+\usepackage[latin1]{inputenc}
+\usepackage{hyperlatex}
+\usepackage{enumerate}
+\usepackage{macros}
+
+\htmldirectory{pratic-html}
+\htmlcharset{mnemonic}
+\W\newcommand{\HlxIllegalAccent}[2]{#2}
+\W\renewcommand{\HlxIcons}{}
+\htmldepth{2}
+
+\htmltitle{Exercícios para Introdução aos Computadores/Laboratório de
+Computadores}
+\htmladdress{\copyright 2006--2015
+  Departamento de Ciência de Computadores, Faculdade de Ciências,
+  Universidade do Porto}
+
+\title{Exercícios para Introdução aos Computadores/Laboratório de
+Computadores}
+
+\author{
+{\small Departamento de Ciência de Computadores}\\
+{\small Faculdade de Ciências, Universidade do Porto}}
+
+\date{2015}
+
+
+\newcommand{\lixo}[1]{}
+
+\begin{document}
+\maketitle
+
+\htmlrule
+
+%\xlink{Página da disciplina de {\em Introdução aos
+%    Computadores}}{http://www.ncc.up.pt/~mig/rped/hrpedag_13.html}
+
+\htmlrule
+
+\htmlmenu{2}
+\setcounter{section}{1}
+\section{Programação  da ``shell''}
+
+Faça programas da {\em shell} do Unix/Linux com os seguintes nomes e
+objectivos (nota importante: para evitar que, por engano durante o
+desenvolvimento destes programas, destrua informação na sua área, crie
+um directório de trabalho, por exemplo, \verb-~/lc/shell- e use-o
+como directório-casa para efeitos destes exercícios):
+
+%\subsection{Controlo de Fluxo}
+% nam 10
+\medskip
+ 
+\begin{exercicio}
+  {\bf limpa}: move para o directório {\tt LIXO} no directório casa do
+  utilizador, todos os ficheiros que são dados como argumento. Se
+  algum dos argumentos for a opção {\tt -f} então no fim devem ser
+  removidos todos os ficheiros do directório {\tt LIXO}. Inicialmente,
+  se o directório {\tt LIXO} não existir deve ser criado.
+\end{exercicio}
+
+ % nam 11
+\begin{exercicio}
+  {\bf conta}: imprime o número de argumentos que são directórios. Por
+  exemplo, supondo que \texttt{d1}, \texttt{d2} e \texttt{d3} são
+  directórios e \texttt{f1} e \texttt{f2} não o são, então o comando
+  \texttt{conta d1 f1 f2 d2 d3} deverá retornar o número 3.
+\end{exercicio}
+
+\begin{exercicio}
+%\item % nam 12
+  {\bf distribui FL FN}: lê da entrada standard linha a linha; para
+  cada linha se esta contém letras escreve-a para o ficheiro
+  \verb-FL-, se não, se contiver algarismos escreve-a para o ficheiro
+  \verb-FN-, e se não tiver letras nem algarismos não faz nada. O
+  programa deve ainda contar e escrever para a saída standard o número
+  total de linhas lidas e quantas não foram para nenhum ficheiro.
+\end{exercicio}
+
+\begin{exercicio}
+{\bf arqrot}: faz um arquivo completo do directório corrente
+  usando o \verb-tar- com opção \verb-z-. O arquivo deverá ficar no
+  directório \verb-~/arquivos- e o seu nome será o do directório
+  corrente seguido de \verb-.tgz-. No mesmo directório deverão ser
+  mantidas também cópias dos dois arquivos anteriores mais recentes.
+  Os nomes dessas cópias deverão ser o nome do arquivo seguido de
+  \verb+.1+ para o mais recente e \verb+.2+ para o mais antigo.
+\end{exercicio}  
+\begin{exercicio}
+ Modifique o programa anterior para ter dois argumentos: o
+  directório a arquivar e o directório que contém os arquivos.
+\end{exercicio}
+
+\begin{exercicio}
+ {\bf fazfmf}: cria um ficheiro com um texto descrevendo um
+  directório dado como argumento. O nome do ficheiro será o nome do
+  directório seguido de \verb-.fmf-. O texto tem a informação seguinte
+  em linhas separadas:
+  \begin{enumerate}
+\item   a mensagem \verb-# FMF info-
+ \item   a data
+   \item o nome do directório
+   \item  para cada ficheiro do directório, o nome seguido de
+    \item um caracter de tabulação e da informação obtida pelo comando
+    \verb-file-
+   \item a mensagem \verb-# FMF- seguida de espaço e do número de
+    ficheiros do directório.
+  \end{enumerate}
+\end{exercicio}
+% do exame 20080209
+\begin{exercicio}
+{\bf maior DIR EXT}: dados um nome de um directório (\verb-DIR-) e
+  uma extensão (\verb-EXT-), cria um ficheiro \verb-DIR.tams- contendo
+  os tamanhos em bytes, de todos os ficheiros ordinários do directório
+  \verb-DIR- que tem a extensão \verb-EXT-. Deverá haver mensagens de
+  erro apropriadas se o número de argumentos estiver errado ou se o
+  primeiro não for um directório.
+
+  Pode usar o comando \verb+wc -c+ que lê da entrada standard e
+  escreve na saída standard o número total de bytes lidos.
+  
+\end{exercicio}
+\begin{exercicio}
+ % shell
+\textbf{pares DIR EXT}: dados um nome de um directório (\verb-DIR-) e uma extensão
+    (\verb-EXT-), cria um ficheiro \verb-DIR.pares- contendo pares de
+    nomes de ficheiros ordinários em \verb-DIR- com extensão \verb-EXT-
+    que tenham o mesmo tamanho em bytes. Supõe-se que não há 3 ou mais
+    ficheiros com o mesmo tamanho. Deverá haver mensagens de erro
+    apropriadas se o número de argumentos estiver errado ou se o
+    primeiro não for um directório.
+
+%    Pode usar o comando \verb+wc -c+ que lê da entrada standard e
+%    escreve na saída standard o número total de bytes lidos.
+  \end{exercicio}
+\end{document}

@@ -1,0 +1,124 @@
+\documentclass[12pt]{article}
+\usepackage[portuges]{babel}
+\usepackage{a4wide}
+\usepackage[utf8]{inputenc}
+\usepackage{hyperlatex}
+\usepackage{enumerate}
+\usepackage{macros}
+
+\htmldirectory{pratic-html}
+\htmlcharset{mnemonic}
+\W\newcommand{\HlxIllegalAccent}[2]{#2}
+\W\renewcommand{\HlxIcons}{}
+\htmldepth{2}
+
+%\htmltitle{Exercícios para Introdução aos Computadores}
+\htmladdress{\copyright 2006--20011
+  Departamento de Ciência de Computadores, Faculdade de Ciências,
+  Universidade do Porto}
+
+%\title{Exercícios para Introdução aos Computadores}
+
+\author{
+{\small Departamento de Ciência de Computadores}\\
+{\small Faculdade de Ciências, Universidade do Porto}}
+
+\date{2015}
+
+
+\newcommand{\lixo}[1]{}
+
+\begin{document}
+\maketitle
+
+\htmlrule
+
+%\xlink{Página da disciplina de {\em Introdução aos
+%    Computadores}}{http://www.ncc.up.pt/~mig/rped/hrpedag_13.html}
+
+\htmlrule
+
+\htmlmenu{2}
+
+\section{Utilização da ``shell''}
+\setcounter{subsection}{2}
+\subsection{Variáveis}
+
+\begin{exercicio}
+Utilizar variáveis:
+  \begin{enumerate}
+  \item Definir a variável \texttt{D} com o caminho para a directório
+    corrente, p.e \verb=~/aulas/ic/unix=.
+
+\item Usando a variável que criou: 
+  \begin{enumerate}
+  \item liste o conteúdo desse directório.
+  \item copie o conteúdo do directório para o ficheiro
+    \texttt{content}.
+  \end{enumerate}
+
+\end{enumerate}
+\end{exercicio}
+
+\begin{exercicio}
+
+Alterar variáveis de ambiente:
+ 
+\begin{enumerate}
+\item Liste todas as variáveis de ambiente
+
+\item Altere a variável \texttt{PATH} para incluir o directório \verb=~/bin=
+
+\item Mude a directório corrente para a raiz e verifique se pode executar os
+seus programas.
+
+\end{enumerate}
+\end{exercicio}
+
+\begin{exercicio}
+  Alterar o ficheiro de inicialização da shell \texttt{.bashrc} por
+  forma a que as futuras sessões de trabalho:
+  \begin{enumerate}
+  \item Possam executar comandos em \verb=~/bin= e no directório em que se encontre
+  \item Tenham na \emph{prompt} a hora e o directório corrente. [Nota: pode
+    consultar a página do manual (\texttt{man bash}) e o tópico "PROMPTING".]
+\end{enumerate}
+  
+\end{exercicio}
+
+
+\subsection{ Ficheiros de Comandos}
+
+Nos exercícios seguintes deve criar ficheiros de comandos que realizem
+as tarefas pedidas. Dentro do seu ficheiro/comando, os argumentos
+serão referenciados como \texttt{\$0, \$1, \$2}, \ldots.
+
+\medskip
+
+\begin{exercicio}\label{inscritos}
+Contar o número de alunos que se increveram pela primeira vez num dado
+ano ({\tt \$1}). Notar que:
+\begin{itemize}
+\item deve utilizar o ficheiro \texttt{passwd} (da folha 2).
+\item deve encadear os comandos 
+\item pode utilizar o comando \verb+cut -c <colunas>+ para mostrar só a
+  parte que interessa
+\end{itemize}
+  
+\end{exercicio}
+
+\begin{exercicio}
+  Crie um comando para encontrar ficheiros .c, a partir de um dado
+directório ({\tt \$1}), que contenham uma palavra dada ({\tt \$2}). 
+Notar que:
+\begin{itemize}
+\item deve utilizar o comando \texttt{find} com a opção \texttt{-exec} para poder executar o \texttt{grep}
+\item
+o \texttt{grep} deve utilizar a opção \texttt{-H}, para mostrar o nome dos ficheiros
+
+\item deve executar no output um \texttt{cut} para obter apenas o endereço de cada ficheiro
+\item finalmente, utilize o \texttt{sort} para eliminar as repetições de ficheiros.
+\end{itemize}
+\end{exercicio}
+
+\end{document}

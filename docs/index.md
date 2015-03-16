@@ -1,11 +1,27 @@
 # Bem Vindo à UC de Laboratório de Computadores
 
-Para informação sobre a UC visite a página [sigarra](https://sigarra.up.pt/fcup/pt/ucurr_geral.ficha_uc_view?pv_ocorrencia_id=359086).
+![World Lab](/img/connected-world_645x400.jpg)
 
-## Primeira aula: Unix 
+Para informação geral sobre a UC visite a página [sigarra](https://sigarra.up.pt/fcup/pt/ucurr_geral.ficha_uc_view?pv_ocorrencia_id=359086).
 
-* [Introdução a Unix](Unix.ppt) - Tudo o que queria saber sobre Unix
-* [Exercícios de revisão de Conceitos Básicos](folha1.pdf) 
-* [Exercícios de utilização da shell](folha2.pdf) 
-* [Exercícios de utilização da shell](folha3.pdf) 
+A UC inclui:
+
+* Introdução ao Ambiente Unix
+
+* Projeto de Programação
+
+## Avaliação
+
+A avaliação é contínua. Os componentes de avaliação são os seguintes:
+
+* Unix & Shell: avaliação individual em ambiente de laboratorio. Vale 6 em 20.
+
+* Programação: projeto desenhado e implementado por grupo de 3 elementos, inclui 3 momentos de
+avaliação:
+    + Avaliação de comunicação com o servidor;
+    + Avaliação de funcionalidade elementar;
+    + Avaliação de protótipo.
+
+A componente é valorizada em 14 valores.
+
 

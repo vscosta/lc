@@ -1,0 +1,189 @@
+\documentclass[12pt]{article}
+\usepackage[portuges]{babel}
+\usepackage{a4wide}
+\usepackage[utf8]{inputenc}
+\usepackage{hyperlatex}
+\usepackage{enumerate}
+\usepackage{macros}
+
+\htmldirectory{pratic-html}
+\htmlcharset{mnemonic}
+\W\newcommand{\HlxIllegalAccent}[2]{#2}
+\W\renewcommand{\HlxIcons}{}
+\htmldepth{2}
+
+\htmltitle{Exercícios para Introdução aos Computadores}
+\htmladdress{\copyright 2006--20011
+  Departamento de Ciência de Computadores, Faculdade de Ciências,
+  Universidade do Porto}
+
+%\title{Exercícios para Introdução aos Computadores}
+
+\author{
+{\small Departamento de Ciência de Computadores}\\
+{\small Faculdade de Ciências, Universidade do Porto}}
+
+\date{2011}
+
+
+\newcommand{\lixo}[1]{}
+
+\begin{document}
+\maketitle
+
+\htmlrule
+
+%\xlink{Página da disciplina de {\em Introdução aos
+%    Computadores}}{http://www.ncc.up.pt/~mig/rped/hrpedag_13.html}
+
+\htmlrule
+
+\htmlmenu{2}
+
+\section{Utilização da ``shell''}
+\setcounter{subsection}{1}
+\subsection{Expansão de padrões \emph{glob}, redireção e encadeamento
+  de comandos}
+
+
+
+\begin{exercicio}
+Usando padrões \emph{glob} escreva comandos 
+para listar ficheiros ou directórios 
+no directório corrente cujo nome respeite as seguintes condições:
+\begin{alineas}
+\item começe por um algarismo;
+\item tenha apenas 4 caracteres;
+\item não termine em ``\texttt{a}'';
+\item termine em \texttt{jpg} ou \texttt{png};
+\item termine em \texttt{jpg}, \texttt{JPG} ou 
+  qualquer outra combinação dessas letras em maiúsculas ou minúsculas.
+\end{alineas}
+\end{exercicio}
+
+\begin{exercicio}
+Escrever comandos para  listar todos os ficheiros do directório
+\texttt{/etc} cujo nome:
+\begin{alineas}
+\item comece  com ``\texttt{rc}'' e termine com ``\texttt{.d}'';
+\item comece por ``\texttt{rc}'' e tenha pelo menos um algarismo;
+\item termine em ``\texttt{.d}'' e tenha 5 caracteres.
+\end{alineas}
+\end{exercicio}
+
+\begin{exercicio}
+Escrever linhas de comandos da \emph{shell} para:
+\begin{alineas}
+\item Executar o comando \texttt{ps} redirecionando
+  a saída padrão para um ficheiro \texttt{proc.txt}.
+\item Executar o comando \texttt{who} ligando  o canal de saída padrão 
+  para a entrada do comando \texttt{sort}
+\item Concatenar no canal de saída padrão o contéudo os
+  ficheiros \texttt{t1} e \texttt{t2}.
+\item Concatenar no ficheiro \texttt{final} o contéudo os ficheiros \texttt{t1} e \texttt{t2}.
+\item Procurar a partir do directório corrente todos os ficheiros
+  cujo nome começa por \texttt{folha}.
+\end{alineas}
+\end{exercicio}
+
+
+
+\begin{exercicio}\label{ex:passwd}
+Considere o ficheiro em \texttt{/net/areas/prof/ic/passwd2004} com
+informações sobre utilizadores dum sistema UNIX. 
+%\htmladdnormallink{\texttt{passwd}}{passwd2004} (ou outro ficheiro do
+%\texttt{/etc/passwd}).
+\begin{alineas}
+\item Copiar o ficheiro para a sua área de trabalho com o nome \texttt{passwd}.
+\item \label{pass} Criar um ficheiro com os alunos que entraram no ano
+  2004,  i.e. cujo nome de utilizador começa com \texttt{c04}.
+\item Listar os utilizadores que não são alunos (isto é, cujo login
+  não começa por \texttt{c??}).  
+\item Criar o ficheiro \texttt{alunos2004}
+  com a listagem por ordem alfabética dos nomes (e apenas os nomes)
+  dos alunos que entraram esse ano.
+
+\item Listar os alunos cujo nome termina em \texttt{a} (ou \texttt{A}).
+
+\item Listar os primeiros nomes de todos os alunos.
+
+\item Contar o número de primeiros nomes diferentes de todos os alunos
+\end{alineas}
+\end{exercicio}
+
+\begin{exercicio}  
+Escreva uma linha de comando Unix que, a partir do ficheiro
+{\tt passwd} (criado no exercício~\ref{ex:passwd}), produza uma listagem ordenada dos nomes dos
+utilizadores cuja directório casa está debaixo de {\tt /home}. Assuma
+que o ficheiro {\tt passwd} tem os campos separados pelo caracter
+dois-pontos (":") e que o nome do utilizador é o quinto campo.
+\end{exercicio}
+
+
+\begin{exercicio}
+  Escreva uma linha de comando Unix que, a partir do ficheiro
+\texttt{passwd} (criado no exercício~\ref{ex:passwd}), indique o número de utilizadores cujo directório
+está debaixo do directorio \texttt{/home} . Para tanto assuma que o ficheiro
+\texttt{passwd} tem os campos separados pelo caracter dois-pontos (":") e
+que o directorio de cada utilizador é o sexto campo da respectiva
+linha. 
+\end{exercicio}
+
+\begin{exercicio}
+Escreva uma linha de comando combinado \texttt{ps} e 
+\texttt{grep} para listar todos processos em execução 
+do super-utilizador (\texttt{root}). 
+Consulte o manual do \texttt{ps} e encontre uma forma directa de
+obter essa lista.
+\end{exercicio}
+
+\begin{exercicio}
+Utilize o \texttt{find} para procurar todos os ficheiros na sua 
+área com mais do que 1Mb.
+\end{exercicio}
+
+\begin{exercicio}
+Utilize \texttt{locate} para procurar todos os ficheiros
+no sistema em cujo nome ocorre ``\texttt{emacs}''.
+Consegue combinar com o \texttt{grep} para excluir 
+ficheiros em cujo caminho ocorre ``\texttt{lib}''?
+\end{exercicio}
+
+\begin{exercicio}
+Crie um ficheiro de texto com algumas linhas que encaixem
+e outras que não encaixem na 
+expressão regular \texttt{\^{}[a-zA-Z]+[0-9]+\$}.
+Utilize o comando \texttt{grep} para verificar a sua intuição.
+\end{exercicio}
+
+\pagebreak
+
+\begin{exercicio}
+No directório \texttt{\~{}prof/ic/Music} estão vários ficheiros
+MP3 com exertos de concertos ao vivo obtidos
+gratuitamente do sítio \texttt{http://www.archive.org}.
+\begin{alineas}
+\item Usando um único comando \texttt{cp} copie todos esses ficheiros
+  para o directório \texttt{Music} na sua área.
+\item Experimente usar o comando \texttt{mp3info} para obter meta-informação sobre
+  os ficheiros (título, artistas, álbum, etc.). 
+\item Usando o comando \texttt{mpg123} pode reproduzir vários ficheiros.
+  Escreva uma linha de comando para reproduzir todos os ficheiros dos
+  \emph{Greatful Dead} (os nomes desses ficheiros têm um 
+  prefixo comum).
+\item Consulte o manual de \texttt{mp3info} para saber como usar
+  a opção \texttt{-p} para formatar a meta-informação dum ficheiro MP3.
+  Use essa opção para listar uma tabela com informação de ficheiro:
+  nome do artista, álbum e faixa separados por `\texttt{;}'. 
+\item Utilize \texttt{mp3info}, \texttt{sort} e \texttt{uniq}
+  para listar todos os nomes de artistas e álbuns por ordem alfabética
+  e sem repetições.
+\item Consulte o manual de \texttt{mp3info}  para ver como modificar 
+  etiquetas dum ficheiro MP3.
+  Em seguida escreva um programa da \emph{shell} para preencher a etiqueta
+  \texttt{Year} de todos estes ficheiros MP3 (pode usar \texttt{cut}
+  para obter essa informação nos primeiros carateres dos títulos).
+\end{alineas}
+\end{exercicio}
+
+\end{document}

@@ -1,4 +1,7 @@
 site_name: Laboratório de Computadores
 pages:
-- [index.md, Home]
+- ['index.md','Home']
+- ['unix/index.md', 'Unix']
+- ['unix/folha5.md', 'Make']
+- ['game/pacman.md','Jogo']
 theme: journal
