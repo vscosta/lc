@@ -1,10 +1,10 @@
 
 #include "fac.h"
 
-int fac( int n )
+int fac( int i )
 {
   if ( i == 0)
     return 1;  
-  return i * fac(n-1);
+  return i * fac(i-1);
 }
 
